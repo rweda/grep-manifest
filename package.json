@@ -1,0 +1,23 @@
+{
+  "name": "manifest-search",
+  "version": "0.0.0",
+  "description": "Finds packages by searching for manifest files.",
+  "main": "ManifestSearch.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rweda/manifest-search.git"
+  },
+  "author": "Redwood EDA (http://redwoodeda.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rweda/manifest-search/issues"
+  },
+  "homepage": "https://github.com/rweda/manifest-search#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
