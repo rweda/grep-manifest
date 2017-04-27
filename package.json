@@ -4,7 +4,8 @@
   "description": "Finds packages by searching for manifest files.",
   "main": "ManifestSearch.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,12 @@
   "homepage": "https://github.com/rweda/manifest-search#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.4.3",
     "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "glob-promise": "^3.1.0",
+    "js-dossier": "^0.11.1"
   }
 }
