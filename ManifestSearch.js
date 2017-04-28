@@ -7,7 +7,7 @@ const glob = require("glob-promise");
  *   [glob]{@link https://github.com/isaacs/node-glob} library.
  * @property {String} glob.cwd The current working directory in which to search. Defaults to `process.cwd()`.
  * @property {Array<String>} glob.ignore Add a pattern or an array of glob patterns to exclude matches.
- *   Set to `["**\/node_modules"]` by default.
+ *   Set to `["**\/node_modules/**\/*"]` by default.
  * @property {String} query The query to pass to Glob.  If not explicitly provided, a default query will be built
  *   according to other options.
  * @property {Boolean} deep Sets the default `query`.  If `true`, searches directories recursively for manifest files.
@@ -43,7 +43,7 @@ class ManifestSearch {
     */
     this.opts = opts || {};
     if(!this.opts.glob) { this.opts.glob = {}; }
-    if(!this.opts.glob.ignore) { this.opts.glob.ignore = ["**/node_modules"]; }
+    if(!this.opts.glob.ignore) { this.opts.glob.ignore = ["**/node_modules/**/*"]; }
     if(!this.opts.include) { this.opts.include = []; }
     /**
      * The last search executed, cached for preformance.
