@@ -20,12 +20,12 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "docdash": "^0.4.0",
+    "gh-pages-travis": "^1.0.4",
     "jsdoc": "^3.4.3",
     "mocha": "^3.3.0",
     "mock-fs": "^4.2.0"
   },
   "dependencies": {
-    "glob-promise": "^3.1.0",
-    "js-dossier": "^0.11.1"
+    "glob-promise": "^3.1.0"
   }
 }
