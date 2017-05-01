@@ -1,6 +1,6 @@
 {
   "name": "manifest-search",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Finds packages by searching for manifest files.",
   "main": "ManifestSearch.js",
   "scripts": {
