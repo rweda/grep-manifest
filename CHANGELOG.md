@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Added
+- Tests running on an unmocked file system
+
 ### Modified
 - Fixed `glob` searching - should use `@(package.json)` instead of `{package.json}`
 - Marked tests inside `test-basics` as using `"Mocked"` filesystem
