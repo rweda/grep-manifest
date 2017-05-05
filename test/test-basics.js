@@ -53,7 +53,7 @@ function packageTree(opts) {
   return pkg;
 }
 
-describe("Manifest Searching", function() {
+describe("Manifest Searching (Mocked)", function() {
 
   let tree = {};
   let root_packages = 0;
@@ -85,9 +85,18 @@ describe("Manifest Searching", function() {
     mock.restore();
   });
 
-  it("should find the correct number of packages", function() {
+  it("should only find top-level packages by default", function() {
     mock(tree);
     let search = new ManifestSearch();
+    return search.search()
+      .then(packages => {
+        packages.length.should.equal(root_packages);
+      });
+  });
+
+  it("should find the deep of packages", function() {
+    mock(tree);
+    let search = new ManifestSearch({ deep: true });
     return search.search()
       .then(packages => {
         packages.length.should.equal(root_packages + deep_packages);
@@ -104,7 +113,7 @@ describe("Manifest Searching", function() {
 
     it("should not include packages in 'node_modules/'", function() {
       mock(tree);
-      let search = new ManifestSearch();
+      let search = new ManifestSearch({ deep: true });
       return search.search()
         .then(packages => {
           packages.length.should.equal(root_packages + deep_packages);

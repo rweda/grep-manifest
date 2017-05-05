@@ -80,8 +80,8 @@ class ManifestSearch {
   */
   search(cache) {
     if(cache && this._lastSearch) { return this._lastSearch; }
-    let manifestFiles = "{" + (this.opts.manifestFiles || ["package.json"]).join(",") + "}";
-    let query = this.opts.query || (this.opts.deep || false) ? "*/" + manifestFiles : "**/" + manifestFiles;
+    let manifestFiles = "@(" + (this.opts.manifestFiles || ["package.json"]).join(",") + ")";
+    let query = this.opts.query || ((this.opts.deep || false) ? "**/" + manifestFiles : "*/" + manifestFiles);
     return glob
       .promise(query, this.opts.glob)
       .then( (contents) => contents.concat(this.opts.include) );
